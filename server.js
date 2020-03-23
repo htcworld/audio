@@ -85,7 +85,7 @@ function serverHandler(request, response) {
         }
 
         var matched = false;
-        ['dist/', 'socket.io/', 'node_modules/canvas-designer/', 'admin/'].forEach(function(item) {
+        ['dist/', 'dev/', 'socket.io/', 'node_modules/canvas-designer/', 'admin/'].forEach(function(item) {
             if (filename.indexOf(resolveURL(item)) !== -1) {
                 matched = true;
             }
@@ -164,10 +164,10 @@ function serverHandler(request, response) {
                 } else if (filename.indexOf(resolveURL('/demos/video-conference/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/video-conference/'), '');
                     filename += resolveURL('/demos/video-conference/index.html');
-                } else if (filename.indexOf(resolveURL('/demos')) !== -1) {
-                    filename = filename.replace(resolveURL('/demos/'), '');
+                } else if (filename.indexOf(resolveURL('/')) !== -1) {
+                    filename = filename.replace(resolveURL('index.html'), '');
                     filename = filename.replace(resolveURL('/demos'), '');
-                    filename += resolveURL('/demos/index.html');
+                    filename += resolveURL('/index.html');
                 } else {
                     filename += resolveURL(config.homePage);
                 }
