@@ -85,7 +85,7 @@ function serverHandler(request, response) {
         }
 
         var matched = false;
-        ['dist/', 'socket.io/', 'node_modules/canvas-designer/', 'admin/'].forEach(function(item) {
+        ['/dist/', '/socket.io/', '/node_modules/canvas-designer/', '/admin/'].forEach(function(item) {
             if (filename.indexOf(resolveURL(item)) !== -1) {
                 matched = true;
             }
@@ -93,7 +93,7 @@ function serverHandler(request, response) {
 
         // files from node_modules
         ['RecordRTC.js', 'FileBufferReader.js', 'getStats.js', 'getScreenId.js', 'adapter.js', 'MultiStreamsMixer.js'].forEach(function(item) {
-            if (filename.indexOf(resolveURL('node_modules/')) !== -1 && filename.indexOf(resolveURL(item)) !== -1) {
+            if (filename.indexOf(resolveURL('/node_modules/')) !== -1 && filename.indexOf(resolveURL(item)) !== -1) {
                 matched = true;
             }
         });
@@ -154,14 +154,13 @@ function serverHandler(request, response) {
 
                 if (filename.indexOf(resolveURL('/')) !== -1) {
                     filename = filename.replace(resolveURL('/'), '');
-                    filename += resolveURL('index.html');
+                    filename += resolveURL('/index.html');
                 } else if (filename.indexOf(resolveURL('admin/')) !== -1) {
                     filename = filename.replace(resolveURL('admin/'), '');
                     filename += resolveURL('/admin/index.html');
                 } else if (filename.indexOf(resolveURL('/')) !== -1) {
                     filename = filename.replace(resolveURL('/'), '');
-                    filename = filename.replace(resolveURL('/'), '');
-                    filename += resolveURL('index.html');
+                    filename += resolveURL('/index.html');
                 } else {
                     filename += resolveURL(config.homePage);
                 }
