@@ -13,8 +13,7 @@
     "client": "cd client && npm install && npm start",
     "rtmp": "cd rtmpserver && npm install && node index.js",
     "me": "npm install && node server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\"",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run me\""
   },
   "author": "",
   "license": "ISC",
