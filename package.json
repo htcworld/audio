@@ -12,7 +12,7 @@
     "server": "cd api && npm install && node server.js",
     "client": "cd client && npm install && npm start",
     "rtmp": "cd rtmpserver && npm install && node index.js",
-    "me": "npm install && node server.js",
+    "me": "cd icall && npm install && node server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run me\""
   },
   "author": "",
