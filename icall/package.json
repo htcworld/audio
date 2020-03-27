@@ -1,0 +1,32 @@
+{
+  "name": "streams",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run me\"",
+    "server": "cd api && npm install && node server.js",
+    "client": "cd client && npm install && npm start",
+    "rtmp": "cd rtmpserver && npm install && node index.js",
+    "me": "npm install && node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run me\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.2",
+    "canvas-designer": "latest",
+    "detectrtc": "latest",
+    "fbr": "latest",
+    "getstats": "latest",
+    "multistreamsmixer": "latest",
+    "recordrtc": "latest",
+    "rtcmulticonnection-server": "latest",
+    "socket.io": "latest",
+    "webrtc-adapter": "latest"
+  }
+}
