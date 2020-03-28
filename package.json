@@ -8,13 +8,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run call\"",
+    "start": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run icall\"",
     "server": "cd api && npm install && node server.js",
     "client": "cd client && npm install && npm start --prefix",
     "rtmp": "cd rtmpserver && npm install && node index.js",
-	"call": "cd call && npm install && node server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run call\"",
-	"heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "icall": "cd icall && npm install && node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run rtmp\" \"npm run icall\"",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
